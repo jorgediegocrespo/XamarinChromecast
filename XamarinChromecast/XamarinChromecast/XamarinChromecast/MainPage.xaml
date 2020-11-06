@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="XamarinChromecast.MainPage"
+             ios:Page.UseSafeArea="true">
+
+    <Grid RowDefinitions="*, Auto, *"
+          HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <Entry x:Name="EnUrl" Grid.Row="1"
+               Placeholder="Introduzca la URL del vídeo"
+               Margin="20,0"
+               HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+
+        <ImageButton x:Name="BtCast" Grid.Row="2"
+                     HeightRequest="50" WidthRequest="50"
+                     CornerRadius="25"
+                     BackgroundColor="WhiteSmoke"
+                     Source="cast.png"
+                     Aspect="AspectFit"
+                     Margin="20"                     
+                     Clicked="BtCast_Clicked"
+                     HorizontalOptions="End" VerticalOptions="End"/>
+
+        <Frame x:Name="FrChromecastDevices"
+               Grid.RowSpan="3"
+               CornerRadius="20"
+               BackgroundColor="WhiteSmoke"
+               HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+               IsVisible="False">
+            <CollectionView x:Name="CvChromecastDevices">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout HeightRequest="50" Spacing="0">
+                            <Label Text="{Binding .}"   
+                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+
+    </Grid>
+
+</ContentPage>
