@@ -134,12 +134,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\cast1x.png" />
+    <BundleResource Include="Resources\cast.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\cast2x.png" />
+    <BundleResource Include="Resources\cast%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\cast3x.png" />
+    <BundleResource Include="Resources\cast%403x.png" />
   </ItemGroup>
 </Project>

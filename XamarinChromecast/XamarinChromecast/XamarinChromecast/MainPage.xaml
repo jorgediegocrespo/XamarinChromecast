@@ -19,6 +19,7 @@
                      BackgroundColor="WhiteSmoke"
                      Source="cast.png"
                      Aspect="AspectFit"
+                     Padding="10"
                      Margin="20"                     
                      Clicked="BtCast_Clicked"
                      HorizontalOptions="End" VerticalOptions="End"/>
