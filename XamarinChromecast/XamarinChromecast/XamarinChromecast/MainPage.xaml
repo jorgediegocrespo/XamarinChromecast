@@ -27,20 +27,36 @@
         <Frame x:Name="FrChromecastDevices"
                Grid.RowSpan="3"
                CornerRadius="20"
+               Padding="0,0,0,20"
                BackgroundColor="WhiteSmoke"
                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                IsVisible="False">
-            <CollectionView x:Name="CvChromecastDevices">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout HeightRequest="50" Spacing="0">
-                            <Label Text="{Binding .}"   
-                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                                   HorizontalOptions="Center" VerticalOptions="Center" />
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+            <StackLayout Padding="0" Margin="0">
+                <ImageButton x:Name="BtClose"
+                             HeightRequest="48" WidthRequest="48"
+                             BackgroundColor="Transparent"
+                             Source="close.png"
+                             Aspect="AspectFit"
+                             Padding="12"
+                             Margin="2"                     
+                             Clicked="BtClose_Clicked"
+                             HorizontalOptions="End" VerticalOptions="Start"/>
+                <CollectionView x:Name="CvChromecastDevices"
+                                SelectionMode="Single"
+                                BackgroundColor="Transparent"
+                                SelectionChanged="CvChromecastDevices_SelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout HeightRequest="50" Spacing="0"
+                                         HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding FriendlyName}"   
+                                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
         </Frame>
 
     </Grid>
